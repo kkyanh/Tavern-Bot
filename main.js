@@ -4,6 +4,7 @@ const prefix = "-";
 const fs = require("fs");
 const qotd = require("random-question");
 const fetch = (...args) => import("node-fetch").then(({default: fetch}) => fetch(...args));
+require("dotenv").config();
 
 const populationCounter = require("./counters/population-counter");
 
@@ -95,4 +96,4 @@ client.on("message", message => {
     }
 });
 
-client.login('OTk3MjU0NjE5MjMzMjYzNjQ3.G9rGLy.HgWrYQotmngQf2lzcwnM8A2JgnYqUat6yDo0h0');
+client.login(process.env.TOKEN);
