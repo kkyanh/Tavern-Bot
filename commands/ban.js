@@ -1,8 +1,8 @@
 module.exports = {
-    name: 'ban',
-    description: 'bans specified user',
+    name: "ban",
+    description: "bans specified user",
     execute(message, args) {
-        if (!message.member.roles.cache.has('498894549800976388')) return;
+        if (!message.member.roles.cache.has("498894549800976388")) return;
         const member = message.mentions.users.first();
 
         if (member) {
@@ -12,7 +12,7 @@ module.exports = {
             message.channel.send("User has been banned.");
         }
         else {
-            message.channel.send('No user found.  No ban issued.');
+            message.channel.send("No user found.  No ban issued.");
         }
     }
 }

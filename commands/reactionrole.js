@@ -1,18 +1,18 @@
 module.exports = {
-    name: 'reactionrole',
-    description: 'sets up a reaction role message',
+    name: "reactionrole",
+    description: "sets up a reaction role message",
     async execute(message, args, Discord, client) {
-        const channel = '997357755272798338';
-        const d2 = message.guild.roles.cache.find(role => role.name === 'Destiny 2');
-        const mc = message.guild.roles.cache.find(role => role.name === 'Minecraft');
+        const channel = "997357755272798338";
+        const d2 = message.guild.roles.cache.find(role => role.name === "Destiny 2");
+        const mc = message.guild.roles.cache.find(role => role.name === "Minecraft");
    
-        const d2Emoji = '🤢';
-        const mcEmoji = '🟩';
+        const d2Emoji = "🤢";
+        const mcEmoji = "🟩";
 
         let embed = new Discord.MessageEmbed()
-        .setColor('#FBEFDF')
-        .setTitle('Gamer Roles Asf')
-        .setDescription('Add role for specific game channels\n'
+        .setColor("#FBEFDF")
+        .setTitle("Gamer Roles Asf")
+        .setDescription("Add role for specific game channels\n"
             + `${d2Emoji} for Destiny 2\n`
             + `${mcEmoji} for Minecraft`);
 
@@ -20,7 +20,7 @@ module.exports = {
         messageEmbed.react(d2Emoji);
         messageEmbed.react(mcEmoji);
 
-        client.on('messageReactionAdd', async(reaction, user) => {
+        client.on("messageReactionAdd", async(reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;
@@ -39,7 +39,7 @@ module.exports = {
             }
         })
 
-        client.on('messageReactionRemove', async(reaction, user) => {
+        client.on("messageReactionRemove", async(reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;

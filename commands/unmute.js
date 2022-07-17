@@ -1,8 +1,8 @@
 module.exports = {
-    name: 'unmute',
-    description: 'unmutes specified user',
+    name: "unmute",
+    description: "unmutes specified user",
     execute(message, args) {
-        if (!message.member.roles.cache.has('498894549800976388')) return;
+        if (!message.member.roles.cache.has("498894549800976388")) return;
         const target = message.mentions.users.first();
 
         if (target) {
@@ -16,7 +16,7 @@ module.exports = {
             message.channel.send(`<@${memberTarget.user.id}> has been unmuted.`)
         }
         else {
-            message.channel.send('No user found.  No unmute issued.');
+            message.channel.send("No user found.  No unmute issued.");
         }
     }
 }
